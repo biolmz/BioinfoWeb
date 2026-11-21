@@ -6,55 +6,15 @@
   },
   "items": [
     {
-      "id": "rnaseq-pipeline",
-      "title": "RNA-seq 差异表达流程（Snakemake）",
-      "date": "2026-10",
-      "status": "进行中",
-      "tags": ["Snakemake", "RNA-seq", "DESeq2", "Docker"],
-      "summary": "从原始 fastq 到差异基因表的一条命令流程：质控、去接头、比对、定量、差异分析、HTML 报告。工具版本和参考基因组路径集中在 config 里，换数据集只需要改样本表。",
-      "highlights": [
-        "6 个可单独运行的步骤模块",
-        "支持双端与单端测序",
-        "自动汇总 FastQC / STAR / featureCounts 结果"
-      ],
-      "repo": "https://github.com/biolmz/rnaseq-pipeline",
-      "featured": true
-    },
-    {
-      "id": "16s-template",
-      "title": "16S 扩增子分析模板（QIIME2 + R）",
-      "date": "2026-08",
-      "status": "已完成",
-      "tags": ["QIIME2", "DADA2", "R", "16S"],
-      "summary": "从双端 fastq 到物种组成和多样性图表的模板：DADA2 去噪、物种注释、alpha / beta 多样性，最后用 R 出图。README 里记录了每个参数的取值理由，方便别人复现。",
-      "highlights": [
-        "一条命令完成去噪与注释",
-        "输出物种组成表和 PCoA 图",
-        "附带 3 个数据集的可复现实验记录"
-      ],
-      "repo": "https://github.com/biolmz/16s-qiime2-template",
-      "featured": true
-    },
-    {
-      "id": "variant-annotator",
-      "title": "变异注释小工具：把 VCF 变成能读的表格",
-      "date": "2026-06",
-      "status": "已完成",
-      "tags": ["Python", "VCF", "ClinVar"],
-      "summary": "读 VCF，按 ClinVar 和 gnomAD 注释频率与临床意义，输出带过滤标记的 TSV；适合在拿到检测结果后快速筛查候选位点，不用每次都手写筛选脚本。",
-      "highlights": [
-        "支持多个 VCF 批量输入",
-        "输出可直接筛选的 TSV",
-        "带最小单元测试"
-      ],
-      "repo": "https://github.com/biolmz/variant-annotator"
-    },
-    {
       "id": "env-setup",
-      "title": "生信环境一键安装脚本",
+      "title": "ceshi",
       "date": "2026-04",
       "status": "已完成",
-      "tags": ["Bash", "Conda", "Linux"],
+      "tags": [
+        "Bash",
+        "Conda",
+        "Linux"
+      ],
       "summary": "在新服务器上用一条命令装好 conda、mamba 和常用工具，并写入 shell 配置；脚本可重复执行，不会覆盖已有环境，失败步骤可以单独重试。",
       "highlights": [
         "适配 zsh / bash",
@@ -68,7 +28,11 @@
       "title": "个人学习站 v2（本站）",
       "date": "2026-11",
       "status": "持续维护",
-      "tags": ["HTML", "CSS", "JSON"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JSON"
+      ],
       "summary": "纯静态、无构建、数据放 JSON 的个人站。目标是以后加一篇笔记只需要改一个文件，不用重新排版；页面结构按信息架构拆成五个板块。",
       "highlights": [
         "5 个页面，hash 路由",
