@@ -6,20 +6,14 @@
   },
   "items": [
     {
-      "id": "json-static-site",
-      "title": "用 JSON + 原生 JS 搭一个能长期维护的个人站",
-      "date": "2026-11-20",
-      "tags": ["Web", "JSON", "记录"],
-      "summary": "把导航、笔记、项目、时间线拆成独立数据文件，页面只负责渲染；换内容不用碰 HTML，也不依赖任何构建工具。代价是本地要起一个静态服务器，浏览器不允许 file:// 直接读 JSON。",
-      "url": "https://github.com/biolmz/bioinfo-notes/blob/main/json-static-site.md",
-      "repo": "https://github.com/biolmz/biolmz.github.io",
-      "readTime": "约 15 分钟"
-    },
-    {
       "id": "rnaseq-upstream",
       "title": "RNA-seq 上游：从 fastq 到 count matrix 的完整链路",
       "date": "2026-11-12",
-      "tags": ["RNA-seq", "STAR", "featureCounts"],
+      "tags": [
+        "RNA-seq",
+        "STAR",
+        "featureCounts"
+      ],
       "summary": "FastQC 看接头和碱基质量，trim_galore 去接头，STAR 比对后再用 featureCounts 定量。关键点是 STAR 的 --quantMode GeneCounts 和 featureCounts 的结果不能混用；参考基因组和 GTF 必须来自同一版本，否则基因名对不上。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/rnaseq-upstream.md",
       "repo": "https://github.com/biolmz/rnaseq-pipeline",
@@ -29,7 +23,10 @@
       "id": "conda-reproducible",
       "title": "用 conda 固定一个半年后还能跑起来的环境",
       "date": "2026-10-28",
-      "tags": ["conda", "可复现"],
+      "tags": [
+        "conda",
+        "可复现"
+      ],
       "summary": "把 channel 优先级、Python 版本和所有工具版本写进 environment.yml，用 mamba 解依赖；装完立刻 conda env export --no-builds 留档，并在 README 里写清楚哪一步需要手动装。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/conda-reproducible.md",
       "repo": "https://github.com/biolmz/bioinfo-env-setup",
@@ -39,7 +36,11 @@
       "id": "gatk-pitfalls",
       "title": "GATK 四步之外：我踩过的 5 个变异检测坑",
       "date": "2026-10-09",
-      "tags": ["GATK", "WGS", "变异检测"],
+      "tags": [
+        "GATK",
+        "WGS",
+        "变异检测"
+      ],
       "summary": "BQSR 需要已知位点文件、参考基因组必须带 .fai 和 .dict、GVCF 的合并顺序会影响结果、硬过滤阈值要按测序深度调。最后用 bcftools stats 加 IGV 抽查，比只看 Ts/Tv 更可靠。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/gatk-pitfalls.md",
       "repo": "https://github.com/biolmz/wgs-gatk-pipeline",
@@ -49,7 +50,11 @@
       "id": "tidyverse-expression",
       "title": "R + tidyverse 整理表达矩阵：长宽转换与批处理",
       "date": "2026-09-21",
-      "tags": ["R", "tidyverse", "表达矩阵"],
+      "tags": [
+        "R",
+        "tidyverse",
+        "表达矩阵"
+      ],
       "summary": "用 pivot_longer / pivot_wider 在长表和宽表之间切换，join 注释表时注意基因 ID 版本；批量读 count 文件时先统一列名再合并，能省掉后面一半的调试时间。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/tidyverse-expression.md",
       "repo": "https://github.com/biolmz/rnaseq-pipeline",
@@ -59,7 +64,11 @@
       "id": "qiime2-dada2",
       "title": "16S 扩增子：DADA2 去噪参数怎么定",
       "date": "2026-09-02",
-      "tags": ["16S", "QIIME2", "DADA2"],
+      "tags": [
+        "16S",
+        "QIIME2",
+        "DADA2"
+      ],
       "summary": "先看截断后的质量分布再定 trunc 长度，forward 和 reverse 的 overlap 要够；被过滤掉的 reads 比例超过 20% 时，优先回头看引物和质控，而不是继续调参。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/qiime2-dada2.md",
       "repo": "https://github.com/biolmz/16s-qiime2-template",
@@ -69,7 +78,11 @@
       "id": "awk-fastq-quality",
       "title": "awk 统计 fastq 质量：不用装任何软件",
       "date": "2026-08-15",
-      "tags": ["Linux", "awk", "fastq"],
+      "tags": [
+        "Linux",
+        "awk",
+        "fastq"
+      ],
       "summary": "利用四行一条的 fastq 结构，按 (NR-2)%4==0 取质量行，累加 ASCII 值算平均质量；awk 一行就能出每个样本的 Q20 / Q30 比例，适合在服务器上快速抽查。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/awk-fastq-quality.md",
       "readTime": "约 10 分钟"
@@ -78,7 +91,11 @@
       "id": "scrna-qc",
       "title": "单细胞质控：线粒体比例没有统一阈值",
       "date": "2026-07-26",
-      "tags": ["单细胞", "Seurat", "质控"],
+      "tags": [
+        "单细胞",
+        "Seurat",
+        "质控"
+      ],
       "summary": "不同组织、不同建库方式的 MT% 分布差很多，先画分布再定阈值，别直接套 10%。同时看 nFeature 和 nCount 的散点，双细胞用 scDblFinder 辅助判断。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/scrna-qc.md",
       "repo": "https://github.com/biolmz/scrna-learn",
@@ -88,7 +105,10 @@
       "id": "git-for-bioinfo",
       "title": "Git 管理生信项目：代码、数据、结果的边界",
       "date": "2026-06-30",
-      "tags": ["Git", "工程化"],
+      "tags": [
+        "Git",
+        "工程化"
+      ],
       "summary": "data/ 和 results/ 进 .gitignore，只提交脚本、配置和小型注释文件；用 tag 标记能跑通的版本，用 README 记录数据来源和下载命令，换电脑时不用靠回忆。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/git-for-bioinfo.md",
       "readTime": "约 14 分钟"
@@ -97,7 +117,10 @@
       "id": "phylogeny-basics",
       "title": "系统发育树：MAFFT → trimAl → IQ-TREE 的一条路",
       "date": "2026-05-18",
-      "tags": ["系统发育", "IQ-TREE"],
+      "tags": [
+        "系统发育",
+        "IQ-TREE"
+      ],
       "summary": "先比对再修剪，trimAl 的 -automated1 适合大多数情况；IQ-TREE 用 ModelFinder 选模型，bootstrap 至少 1000 次；树的美化在 iTOL 上做，别在命令行硬调。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/phylogeny-basics.md",
       "readTime": "约 22 分钟"
@@ -106,7 +129,10 @@
       "id": "python-rename",
       "title": "Python 批量重命名：我第一次写脚本踩的坑",
       "date": "2026-03-09",
-      "tags": ["Python", "脚本"],
+      "tags": [
+        "Python",
+        "脚本"
+      ],
       "summary": "路径用 pathlib 拼，别手写字符串；重命名前先打印 dry-run 列表，确认不会覆盖；遇到中文文件名要显式指定 encoding，否则在 Windows 上很容易报错。",
       "url": "https://github.com/biolmz/bioinfo-notes/blob/main/python-rename.md",
       "readTime": "约 8 分钟"
