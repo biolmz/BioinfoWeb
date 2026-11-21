@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>内容管理 · 刘铭哲</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#070d17">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1424'/%3E%3Cpath d='M22 12c0 10 20 14 20 24S22 46 22 52' stroke='%232dd4bf' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M42 12c0 10-20 14-20 24s20 10 20 16' stroke='%2338bdf8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M24 18h16M21 26h22M21 38h22M24 46h16' stroke='%2394a3b8' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('bio-theme');
+        var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        document.documentElement.dataset.theme = saved || (prefersLight ? 'light' : 'dark');
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+</head>
+<body class="admin-body">
+  <a class="skip-link" href="#admin-main">跳到主要内容</a>
+
+  <header class="site-header admin-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="回到网站首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M11 4c0 5 10 7 10 12s-10 7-10 12"/>
+            <path d="M21 4c0 5-10 7-10 12s10 7 10 12"/>
+            <path d="M11.5 8.5h9M9.5 13h13M9.5 19h13M11.5 23.5h9"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>刘铭哲</strong>
+          <small>Content Studio</small>
+        </span>
+      </a>
+
+      <span class="admin-header-tag">内容管理</span>
+
+      <div class="header-actions admin-header-actions">
+        <button class="icon-btn theme-toggle" id="admin-theme" type="button" aria-label="切换深色 / 浅色主题" title="切换主题">
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+          </span>
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"></path>
+            </svg>
+          </span>
+        </button>
+        <a class="btn btn-ghost btn-sm" href="index.html" target="_blank" rel="noopener">查看网站 ↗</a>
+        <button class="btn btn-ghost btn-sm" id="logout" type="button" hidden>退出</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main" id="admin-main" tabindex="-1">
+    <div class="wrap admin-wrap">
+      <section class="login-view" id="login-view">
+        <div class="login-card" id="login-card">
+          <p class="eyebrow">Restricted area</p>
+          <h1>内容管理</h1>
+          <p class="login-lede">登录后可以新增、修改学习笔记、项目、时间线和资源，并一键提交到 GitHub。</p>
+
+          <form class="login-form" id="login-form" novalidate>
+            <label class="field">
+              <span class="field-label">管理密码</span>
+              <span class="password-wrap">
+                <input id="admin-password" type="password" autocomplete="current-password" placeholder="输入密码" required>
+                <button class="password-toggle" id="password-toggle" type="button">显示</button>
+              </span>
+            </label>
+            <button class="btn btn-primary btn-block" id="login-submit" type="submit">进入管理台</button>
+            <p class="form-error" id="login-error" role="alert" hidden></p>
+          </form>
+
+          <p class="login-note">
+            <span aria-hidden="true">◈</span>
+            密码只用于隐藏管理入口，真正的写入权限由 GitHub Token 控制。
+          </p>
+          <p class="login-file-note" id="file-note" hidden>当前是 <code>file://</code> 打开，浏览器不允许读取 JSON。请通过本地服务器或 GitHub Pages 访问。</p>
+        </div>
+
+        <aside class="login-aside" aria-label="可以管理的内容">
+          <p class="eyebrow">What you can edit</p>
+          <ol class="login-list">
+            <li><span>01</span>学习笔记与标签</li>
+            <li><span>02</span>项目与链接</li>
+            <li><span>03</span>成长时间线</li>
+            <li><span>04</span>资源收藏分类</li>
+            <li><span>05</span>个人资料与技能矩阵</li>
+          </ol>
+          <pre class="login-code"><span class="c">// 数据文件</span>
+data/
+├── notes.json
+├── projects.json
+├── timeline.json
+├── resources.json
+└── site.json
+
+<span class="c">// 提交方式</span>
+GitHub Contents API
+或下载 JSON 手动上传</pre>
+        </aside>
+      </section>
+
+      <section class="dashboard" id="dashboard" hidden>
+        <div class="admin-topbar">
+          <div>
+            <p class="eyebrow">Content Studio</p>
+            <h1>内容管理</h1>
+            <p class="admin-sub">编辑内容 → 提交到 GitHub，或在没有 Token 时导出 JSON 手动上传。</p>
+          </div>
+          <div class="admin-actions">
+            <button class="btn btn-ghost btn-sm" id="export-all" type="button">导出全部</button>
+            <button class="btn btn-ghost btn-sm" id="refresh" type="button">重新加载</button>
+            <button class="btn btn-primary" id="save-all" type="button">提交全部更改</button>
+          </div>
+        </div>
+
+        <div class="admin-statusbar" aria-live="polite">
+          <div class="status-group">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="repo-status">仓库：未配置</span>
+            <span class="status-sep">/</span>
+            <span id="token-status">Token：未配置</span>
+          </div>
+          <div class="status-group status-group--right">
+            <span id="dirty-status">没有未提交的修改</span>
+            <button class="text-btn" id="open-settings" type="button">GitHub 设置</button>
+          </div>
+        </div>
+
+        <div class="studio">
+          <nav class="admin-tabs" id="admin-tabs" aria-label="内容类型">
+            <button class="admin-tab is-active" type="button" data-tab="notes">
+              <span class="tab-index">01</span><span class="tab-label">学习笔记</span><span class="tab-count" data-count="notes">—</span>
+            </button>
+            <button class="admin-tab" type="button" data-tab="projects">
+              <span class="tab-index">02</span><span class="tab-label">项目</span><span class="tab-count" data-count="projects">—</span>
+            </button>
+            <button class="admin-tab" type="button" data-tab="timeline">
+              <span class="tab-index">03</span><span class="tab-label">时间线</span><span class="tab-count" data-count="timeline">—</span>
+            </button>
+            <button class="admin-tab" type="button" data-tab="resources">
+              <span class="tab-index">04</span><span class="tab-label">资源收藏</span><span class="tab-count" data-count="resources">—</span>
+            </button>
+            <button class="admin-tab" type="button" data-tab="profile">
+              <span class="tab-index">05</span><span class="tab-label">站点资料</span><span class="tab-count" data-count="profile"></span>
+            </button>
+            <button class="admin-tab" type="button" data-tab="skills">
+              <span class="tab-index">06</span><span class="tab-label">技能矩阵</span><span class="tab-count" data-count="skills">—</span>
+            </button>
+            <p class="tabs-foot">修改先留在当前浏览器，提交后才写入 GitHub。快捷键：<kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>S</kbd></p>
+          </nav>
+
+          <section class="admin-panel" id="admin-panel" aria-live="polite"></section>
+        </div>
+
+        <p class="admin-footnote">静态站提示：密码只在前端校验，不能当作真正的安全边界。GitHub Token 建议使用 Fine-grained token，只授予本站仓库的 Contents 读写权限，不要在公共电脑上保存。</p>
+      </section>
+    </div>
+  </main>
+
+  <dialog class="admin-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <form class="dialog-form" id="settings-form" novalidate>
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">GitHub</p>
+          <h2 id="settings-title">提交设置</h2>
+        </div>
+        <button class="icon-btn dialog-close" type="button" data-close="settings-dialog" aria-label="关闭">×</button>
+      </div>
+
+      <p class="dialog-note">配置后可以一键把 JSON 提交到仓库，GitHub Pages 会自动重新构建。没有 Token 也可以编辑并导出 JSON 手动上传。</p>
+
+      <div class="field-row">
+        <label class="field">
+          <span class="field-label">仓库所有者</span>
+          <input id="cfg-owner" type="text" placeholder="biolmz" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="field">
+          <span class="field-label">仓库名</span>
+          <input id="cfg-repo" type="text" placeholder="biolmz.github.io" autocomplete="off" spellcheck="false">
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label class="field">
+          <span class="field-label">分支</span>
+          <input id="cfg-branch" type="text" placeholder="main" autocomplete="off" spellcheck="false">
+        </label>
+        <label class="field">
+          <span class="field-label">Token</span>
+          <input id="cfg-token" type="password" placeholder="留空则保持已保存的 Token" autocomplete="off" spellcheck="false">
+        </label>
+      </div>
+
+      <label class="check">
+        <input id="cfg-remember" type="checkbox" checked>
+        在这台电脑上记住 Token（保存在 localStorage）
+      </label>
+
+      <p class="field-hint">
+        Token 只保存在本机浏览器，不会写进网站。创建方式：GitHub → Settings → Developer settings → Fine-grained tokens，仓库只选本站，权限勾选 <code>Contents: Read and write</code>。
+        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">去创建 ↗</a>
+      </p>
+
+      <div class="dialog-actions">
+        <button class="btn btn-danger-ghost btn-sm" id="clear-token" type="button">清除本机 Token</button>
+        <button class="btn btn-ghost btn-sm" id="test-connection" type="button">测试连接</button>
+        <span class="spacer"></span>
+        <button class="btn btn-primary" type="submit">保存设置</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="admin-dialog" id="export-dialog" aria-labelledby="export-title">
+    <div class="dialog-form">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">Export</p>
+          <h2 id="export-title">导出 JSON</h2>
+        </div>
+        <button class="icon-btn dialog-close" type="button" data-close="export-dialog" aria-label="关闭">×</button>
+      </div>
+
+      <p class="dialog-note" id="export-desc">下载后覆盖 <code>data/</code> 下的同名文件，再提交到 GitHub。</p>
+      <div class="export-list" id="export-list"></div>
+
+      <div class="dialog-actions">
+        <span class="spacer"></span>
+        <button class="btn btn-ghost" type="button" data-close="export-dialog">稍后</button>
+        <button class="btn btn-primary" id="export-open-settings" type="button">配置 Token</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>

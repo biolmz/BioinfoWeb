@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "title": "资源收藏",
+    "description": "只收藏会反复打开的那些：数据库、工具、文献入口和学习材料。",
+    "updated": "2026-11-21"
+  },
+  "groups": [
+    {
+      "category": "公共数据库",
+      "items": [
+        {
+          "name": "NCBI",
+          "desc": "GenBank、SRA、PubMed 的总入口，找序列和原始数据基本都从这里开始。",
+          "url": "https://www.ncbi.nlm.nih.gov/"
+        },
+        {
+          "name": "Ensembl",
+          "desc": "脊椎动物基因组与注释，BioMart 批量导出基因信息很好用。",
+          "url": "https://www.ensembl.org/"
+        },
+        {
+          "name": "UCSC Genome Browser",
+          "desc": "基因组浏览器，查保守性、调控元件和变异位点。",
+          "url": "https://genome.ucsc.edu/"
+        },
+        {
+          "name": "UniProt",
+          "desc": "蛋白序列与功能注释，日常检索用 UniProtKB / Swiss-Prot。",
+          "url": "https://www.uniprot.org/"
+        },
+        {
+          "name": "RCSB PDB",
+          "desc": "蛋白结构数据库，配合 PyMOL 或 ChimeraX 看结构。",
+          "url": "https://www.rcsb.org/"
+        },
+        {
+          "name": "GEO",
+          "desc": "公共表达谱数据，找数据集时先看样本设计和测序平台。",
+          "url": "https://www.ncbi.nlm.nih.gov/geo/"
+        },
+        {
+          "name": "GDC (TCGA)",
+          "desc": "癌症基因组数据门户，下载前先确认数据使用协议。",
+          "url": "https://portal.gdc.cancer.gov/"
+        },
+        {
+          "name": "NGDC / CNCB",
+          "desc": "国内基因组数据平台，GSA 数据库可以查原始测序数据。",
+          "url": "https://ngdc.cncb.ac.cn/"
+        },
+        {
+          "name": "ClinVar",
+          "desc": "变异与临床意义，做注释时核对星级和提交来源。",
+          "url": "https://www.ncbi.nlm.nih.gov/clinvar/"
+        }
+      ]
+    },
+    {
+      "category": "分析工具",
+      "items": [
+        {
+          "name": "Bioconda",
+          "desc": "生信软件的 conda 频道，装之前确认平台和版本。",
+          "url": "https://bioconda.github.io/"
+        },
+        {
+          "name": "Bioconductor",
+          "desc": "R 生信包集合，DESeq2、limma、clusterProfiler 都在这里。",
+          "url": "https://bioconductor.org/"
+        },
+        {
+          "name": "Galaxy",
+          "desc": "网页版分析平台，适合快速验证流程和教学演示。",
+          "url": "https://usegalaxy.org/"
+        },
+        {
+          "name": "nf-core",
+          "desc": "社区维护的 Nextflow 流程，读源码比从零写快很多。",
+          "url": "https://nf-co.re/"
+        },
+        {
+          "name": "QIIME2",
+          "desc": "扩增子与微生物组分析，官方教程质量很高。",
+          "url": "https://qiime2.org/"
+        },
+        {
+          "name": "Seurat",
+          "desc": "单细胞分析 R 包，v5 的整合方法值得单独读一遍。",
+          "url": "https://satijalab.org/seurat/"
+        },
+        {
+          "name": "GATK",
+          "desc": "变异检测官方文档，Best Practices 每年都在更新。",
+          "url": "https://gatk.broadinstitute.org/"
+        },
+        {
+          "name": "IGV",
+          "desc": "基因组浏览器桌面版，检查比对和变异必备。",
+          "url": "https://igv.org/"
+        },
+        {
+          "name": "MultiQC",
+          "desc": "汇总多样本质控报告，一条命令生成 HTML 总览。",
+          "url": "https://multiqc.info/"
+        }
+      ]
+    },
+    {
+      "category": "文献与检索",
+      "items": [
+        {
+          "name": "PubMed",
+          "desc": "文献检索入口，用 MeSH 词和布尔逻辑能省很多时间。",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/"
+        },
+        {
+          "name": "bioRxiv",
+          "desc": "预印本，能看到领域最新方向，注意还没经过同行评审。",
+          "url": "https://www.biorxiv.org/"
+        },
+        {
+          "name": "arXiv q-bio",
+          "desc": "计算生物学预印本，方法类文章比较多。",
+          "url": "https://arxiv.org/list/q-bio/new"
+        },
+        {
+          "name": "Biostars",
+          "desc": "生信问答社区，把报错信息直接搜通常能找到答案。",
+          "url": "https://www.biostars.org/"
+        },
+        {
+          "name": "SEQanswers",
+          "desc": "测序技术论坛，讨论建库、平台和实验细节。",
+          "url": "http://seqanswers.com/"
+        },
+        {
+          "name": "Rosalind",
+          "desc": "用编程题练生信算法，适合入门 Python 时找手感。",
+          "url": "https://rosalind.info/problems/list-view/"
+        }
+      ]
+    },
+    {
+      "category": "规范与学习",
+      "items": [
+        {
+          "name": "FAIR Principles",
+          "desc": "数据可发现、可访问、可互操作、可复用的四条原则。",
+          "url": "https://www.go-fair.org/fair-principles/"
+        },
+        {
+          "name": "Bioinformatics Data Skills",
+          "desc": "生信数据处理的基础书，命令行和 R 的部分很实用。",
+          "url": "http://vincebuffalo.org/book/"
+        },
+        {
+          "name": "Data Carpentry",
+          "desc": "面向科研人员的 Genomics 课程，练习材料可以跟着做。",
+          "url": "https://datacarpentry.org/genomics-workshop/"
+        },
+        {
+          "name": "The Biostar Handbook",
+          "desc": "测序数据分析的实践手册，适合当工具书查。",
+          "url": "https://www.biostarhandbook.com/"
+        },
+        {
+          "name": "GENCODE",
+          "desc": "基因注释参考版本，和 Ensembl 的坐标对应。",
+          "url": "https://www.gencodegenes.org/"
+        },
+        {
+          "name": "Snakemake",
+          "desc": "流程管理工具文档，本站的项目用的就是它。",
+          "url": "https://snakemake.readthedocs.io/"
+        }
+      ]
+    }
+  ]
+}

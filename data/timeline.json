@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "成长时间线",
+    "description": "按季度回看：学过什么、做完了什么、下一步补什么。",
+    "updated": "2026-11-21"
+  },
+  "milestones": [
+    {
+      "date": "2026-11",
+      "type": "里程碑",
+      "title": "站点重构为 JSON 驱动",
+      "detail": "笔记、项目、时间线、资源拆成数据文件，新增内容只改一个文件，不再重复改 HTML。"
+    },
+    {
+      "date": "2026-10",
+      "type": "项目",
+      "title": "个人站 v1 上线",
+      "detail": "用单页 HTML 先把内容放出来，验证自己能不能持续更新，再决定要不要投入更多结构。"
+    },
+    {
+      "date": "2026-09",
+      "type": "里程碑",
+      "title": "开始系统整理笔记",
+      "detail": "给笔记定结构：背景、方法、关键参数、踩坑、结论；旧笔记逐步补齐。"
+    },
+    {
+      "date": "2026-08",
+      "type": "项目",
+      "title": "16S 分析模板完成",
+      "detail": "把 QIIME2 去噪和 R 出图串起来，整理成别人也能跑的分析模板，并补了参数说明。"
+    },
+    {
+      "date": "2026-07",
+      "type": "学习",
+      "title": "单细胞分析入门",
+      "detail": "学 Seurat 的质控、归一化和聚类，重点理解为什么线粒体阈值要按组织调整。"
+    },
+    {
+      "date": "2026-06",
+      "type": "项目",
+      "title": "变异注释工具完成",
+      "detail": "用 Python 读 VCF、查 ClinVar，输出可筛选的表格，补上单元测试和示例数据。"
+    },
+    {
+      "date": "2026-05",
+      "type": "学习",
+      "title": "系统发育分析入门",
+      "detail": "MAFFT → trimAl → IQ-TREE，第一次自己做模型选择和 bootstrap，学会看支持率。"
+    },
+    {
+      "date": "2026-04",
+      "type": "项目",
+      "title": "环境安装脚本完成",
+      "detail": "把常用工具和 conda 配置写成幂等脚本，换服务器时至少省下半天。"
+    },
+    {
+      "date": "2026-03",
+      "type": "学习",
+      "title": "进入变异检测",
+      "detail": "学 GATK Best Practices，理解 BQSR、GVCF 和联合分型各自解决什么问题。"
+    },
+    {
+      "date": "2026-02",
+      "type": "项目",
+      "title": "第一次独立跑通 RNA-seq 上游",
+      "detail": "从 SRA 下载数据，FastQC → trim → STAR → featureCounts，卡在参考基因组版本上两天。"
+    },
+    {
+      "date": "2026-01",
+      "type": "学习",
+      "title": "系统学 R 与 tidyverse",
+      "detail": "用表达矩阵练长宽转换和分组汇总，开始用 R Markdown 写分析记录。"
+    },
+    {
+      "date": "2025-12",
+      "type": "里程碑",
+      "title": "建立 GitHub 仓库，开始公开记录",
+      "detail": "把笔记、脚本和小工具放上去，每个仓库用 README 写清楚能做什么、怎么跑。"
+    },
+    {
+      "date": "2025-11",
+      "type": "学习",
+      "title": "读完《Bioinformatics Data Skills》",
+      "detail": "重点补了 Unix 数据流、可复现分析和 R 基础，做了完整的读书笔记。"
+    },
+    {
+      "date": "2025-10",
+      "type": "项目",
+      "title": "第一个批量质控脚本",
+      "detail": "把 FastQC 和 MultiQC 串成脚本，第一次体会到「能重跑」比「跑过一次」重要。"
+    },
+    {
+      "date": "2025-09",
+      "type": "学习",
+      "title": "重新捡起 Linux 和 Python",
+      "detail": "从文件操作、管道和 conda 开始，每天固定两小时命令行练习。"
+    }
+  ]
+}

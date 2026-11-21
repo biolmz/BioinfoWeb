@@ -1,0 +1,106 @@
+{
+  "name": "刘铭哲",
+  "role": "生物信息学学习者",
+  "positioning": "把测序数据，变成能复现的结论",
+  "intro": "我用 Linux、Python 和 R 处理测序数据：质控、比对、定量、变异检测，再把结果整理成能复查的报告。这个站点记录我学到哪一步、怎么判断，以及踩过的坑。",
+  "focus": ["转录组分析", "变异检测", "可复现流程"],
+  "updated": "2026-11-21",
+  "contact": [
+    {
+      "label": "邮箱",
+      "value": "qflmz2007@163.com",
+      "href": "mailto:qflmz2007@163.com",
+      "icon": "mail",
+      "hint": "交流分析、项目或机会，都发这里",
+      "copy": true
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/biolmz",
+      "href": "https://github.com/biolmz/",
+      "icon": "github",
+      "hint": "笔记全文、项目代码和配置"
+    },
+    {
+      "label": "网站",
+      "value": "biolmz.cn",
+      "href": "https://biolmz.cn/",
+      "icon": "globe",
+      "hint": "较长的分析记录放在这里"
+    },
+    {
+      "label": "微信",
+      "value": "qflmz2007y",
+      "icon": "chat",
+      "hint": "加好友请备注来意",
+      "copy": true
+    }
+  ],
+  "now": [
+    {
+      "label": "主线",
+      "text": "把 RNA-seq 与变异检测流程整理成 Snakemake 工作流，做到一条命令从原始数据跑到报告。"
+    },
+    {
+      "label": "补基础",
+      "text": "统计推断与线性模型，目标是能独立设计差异分析，并说清每个检验的前提。"
+    },
+    {
+      "label": "输出",
+      "text": "每周至少一篇笔记，每月整理一次时间线；正文只写思路，完整代码放 GitHub。"
+    }
+  ],
+  "principles": [
+    {
+      "title": "可复现优先",
+      "text": "每个分析都能从原始数据、脚本和环境文件重新跑一遍。结果目录不手改，参数不进聊天记录。"
+    },
+    {
+      "title": "先跑通，再优化",
+      "text": "先用最直接的方法拿到结果，再回头换工具、调参数。避免一开始就陷进工具比较里。"
+    },
+    {
+      "title": "记录决策",
+      "text": "笔记写清楚为什么选这个参数、放弃了什么方案，而不只是留下一串能跑的命令。"
+    }
+  ],
+  "levels": [
+    { "label": "在用", "desc": "日常分析里持续使用，能独立跑完流程并排查常见问题。" },
+    { "label": "会", "desc": "能看懂、能改、能跑通，遇到复杂问题还需要查文档。" },
+    { "label": "想学", "desc": "已经列进计划，正在补基础，暂时不接相关任务。" }
+  ],
+  "skills": [
+    {
+      "group": "系统与命令行",
+      "items": [
+        { "name": "Linux / Shell", "level": "在用", "score": 78, "note": "文件操作、管道、awk / sed，能写批量处理脚本" },
+        { "name": "Git / GitHub", "level": "在用", "score": 72, "note": "分支、PR，用 tag 标记能跑通的分析版本" },
+        { "name": "Conda / 环境管理", "level": "在用", "score": 68, "note": "environment.yml 锁版本，用 mamba 装生信软件" }
+      ]
+    },
+    {
+      "group": "编程语言",
+      "items": [
+        { "name": "Bash", "level": "在用", "score": 75, "note": "胶水脚本，串起质控、比对和结果汇总" },
+        { "name": "Python", "level": "在用", "score": 70, "note": "pandas 整理表格，写小工具和流程脚本" },
+        { "name": "R", "level": "在用", "score": 66, "note": "DESeq2、ggplot2，表达矩阵与统计图" }
+      ]
+    },
+    {
+      "group": "可视化与报告",
+      "items": [
+        { "name": "ggplot2", "level": "在用", "score": 60, "note": "出版级图形，主题和配色会按要求调" },
+        { "name": "R Markdown / Quarto", "level": "在用", "score": 58, "note": "分析报告一键输出，图表不手工搬" },
+        { "name": "matplotlib", "level": "会", "score": 45, "note": "能画，默认样式还需要慢慢调" }
+      ]
+    },
+    {
+      "group": "统计与实验设计",
+      "items": [
+        { "name": "统计基础", "level": "会", "score": 46, "note": "假设检验、方差分析，正在补线性模型" },
+        { "name": "多重检验校正", "level": "会", "score": 40, "note": "懂 BH / FDR，能解释 adjusted p" },
+        { "name": "实验设计", "level": "想学", "score": 25, "note": "样本量、批次效应，需要系统学" }
+      ]
+    }
+  ]
+}
